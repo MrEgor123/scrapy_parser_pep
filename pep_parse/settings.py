@@ -27,9 +27,6 @@ SUMMARY_TABLE_HEADER = ('Status', 'Quantity')
 SUMMARY_TABLE_BOTTOM = 'Total'
 
 PEP_NAME = 'pep'
-# Важно: используем двойной % чтобы после обработки f‑строкой получился шаблон %(time)s,
-# который затем Scrapy подставит своим механизмом (например, "pep_2025-02-06T15-40-31+00-00.csv")
-#PEP_FILE_NAME = f'{PEP_NAME}_%%(time)s.{FILE_FORMAT}'
 
 FEEDS = {
     'results/pep_%(time)s.csv': {
