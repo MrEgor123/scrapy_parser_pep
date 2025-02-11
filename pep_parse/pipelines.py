@@ -21,8 +21,8 @@ class PepParsePipeline:
     def close_spider(self, spider):
         now = dt.datetime.now()
         now_formatted = now.strftime(settings.DATETIME_FORMAT)
-        file_name = f'{
-            settings.SUMMARY_NAME}_{now_formatted}.{settings.FILE_FORMAT}'
+        file_name = f'{settings.SUMMARY_NAME}_{now_formatted}.{
+            settings.FILE_FORMAT}'
         file_path = self.results_dir / file_name
 
         with open(file_path, mode='w', encoding='utf-8') as csvfile:
