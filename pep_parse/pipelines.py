@@ -18,7 +18,7 @@ class PepParsePipeline:
 
     def process_item(self, item, spider):
         """Метод обработки каждого элемента."""
-        self.statuses[item.get("status")] += 1
+        self.statuses[item.get('status')] += 1
         return item
 
     def close_spider(self, spider):
@@ -27,13 +27,13 @@ class PepParsePipeline:
         now_formatted = now.strftime(settings.DATETIME_FORMAT)
 
         file_name = (
-            f"{settings.SUMMARY_NAME}_{now_formatted}."
-            f"{settings.FILE_FORMAT}"
+            f'{settings.SUMMARY_NAME}_{now_formatted}.'
+            f'{settings.FILE_FORMAT}'
         )
 
         file_path = self.results_dir / file_name
 
-        with open(file_path, mode="w", encoding="utf-8") as csvfile:
+        with open(file_path, mode='w', encoding='utf-8') as csvfile:
             csv.writer(
                 csvfile,
                 dialect=csv.unix_dialect,
