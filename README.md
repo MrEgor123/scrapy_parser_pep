@@ -19,7 +19,7 @@ git clone https://github.com/MrEgor123/scrapy_parser_pep
 ```
 python3 -m venv venv
 ```
-Активировать виртуальное окржуение (Windows / MacOS):
+Активировать виртуальное окржуение (Windows / Linux):
 ```
 venv\Scripts\activate.bat
 ```
