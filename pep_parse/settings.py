@@ -6,6 +6,8 @@ SPIDER_MODULES = ['pep_parse.spiders']
 
 PEP_SPIDER_URL = 'peps.python.org'
 
+DIRECTORY = 'results'
+
 ROBOTSTXT_OBEY = True
 
 BASE_DIR = Path(__file__).parent.parent
@@ -29,7 +31,7 @@ SUMMARY_TABLE_BOTTOM = 'Total'
 PEP_NAME = 'pep'
 
 FEEDS = {
-    'results/pep_%(time)s.csv': {
+    f'{DIRECTORY}/pep_%(time)s.csv': {
         'format': 'csv',
         'fields': ['number', 'name', 'status'],
         'overwrite': True
@@ -40,6 +42,3 @@ FEEDS = {
 ITEM_PIPELINES = {
     'pep_parse.pipelines.PepParsePipeline': 300,
 }
-
-if not RESULTS_DIR.exists():
-    RESULTS_DIR.mkdir(parents=True, exist_ok=True)
